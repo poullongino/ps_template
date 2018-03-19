@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--
+        ADDING ORDER NAME FIELD TO EXISTING VIEW
+        -->
+        <record model="ir.ui.view" id="quotation_inherited_form_view">
+            <field name="name">Quotation Inherited Form View</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr = "/form/sheet/group/group/field[@name = 'partner_id']" position = 'before'>
+                    <field name="order_name"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!--
+            ADDING ORDER NAME ON THE QUOTATION TREE VIEW
+        -->
+
+        <record id="quotation_inherited_tree_view" model="ir.ui.view">
+            <field name="name">Quotation Inherited Tree View</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr = "/tree/field[@name = 'partner_id']" position = "after">
+                    <field name = "order_name"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

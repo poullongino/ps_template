@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <!-- Inherit Delivery Form View to add PO Number -->
+       <record id="delivery_inherited_form_view" model="ir.ui.view">
+           <field name="name">Delivery Inherited Form View</field>
+           <field name="model">stock.picking</field>
+           <field name="inherit_id" ref="stock.view_picking_form"/>
+           <field name="arch" type="xml">
+
+               <xpath expr="/form/sheet/group/group/field[@name='partner_id']" position="after">
+                   <field name="po_no"/>
+               </xpath>
+
+           </field>
+       </record>
+
+    </data>
+</odoo>
