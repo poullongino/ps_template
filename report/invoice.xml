@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="invoice_inherited_report" inherit_id = "account.report_invoice_document">
+            <xpath expr = "//div[hasclass('row','mt32','mb32')]" position = 'inside'>
+                <div class = "col-xs-2" t-if = "o.po_number">
+                    <strong>PO Number</strong>
+                    <p t-field = "o.po_number"/>
+                </div>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

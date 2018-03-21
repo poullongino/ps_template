@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <!-- Inherit Form View to Modify it -->
+       <record id="invoice_inherited_form_view" model="ir.ui.view">
+           <field name="name">Invoice Inherited Form View</field>
+           <field name="model">account.invoice</field>
+           <field name="inherit_id" ref="account.invoice_form"/>
+           <field name="arch" type="xml">
+
+               <xpath expr="/form/sheet/group/group/field[@name='payment_term_id']" position="before">
+                   <field name="po_number"/>
+               </xpath>
+
+               <xpath expr = "//group[hasclass('oe_subtotal_footer oe_right')]" position = "after">
+                   <field name="esd" class="oe_inline" placeholder="Enter TRA tax invoice numbers here ..."/>
+               </xpath>
+
+           </field>
+       </record>
+
+    </data>
+</odoo>
