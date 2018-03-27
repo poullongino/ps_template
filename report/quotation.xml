@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="quotation_inherited_report" inherit_id = "sale.report_saleorder_document">
+            <xpath expr = "//div[hasclass('col-xs-5','col-xs-offset-1')]" position="inside">
+                <div t-if="doc.partner_id.vrn">
+                    <t t-esc = "'VRN'"/>:
+                    <span t-field = "doc.partner_id.vrn"/>
+                </div>
+            </xpath>
+            <xpath expr = "//div[hasclass('row')]" position = 'after'>
+                <h5 class="display-4">
+                    <t t-esc="'Order Name'"/>:
+                    <span t-field = "doc.order_name"/>
+                </h5>
+            </xpath>
+            <xpath expr="//div[@name = 'payment_term']" position="after">
+                <div t-if = "doc.state not in ['draft', 'sent']" class = "col-xs-3">
+                    <strong>PO Number:</strong>
+                    <p t-field = "doc.po_num"/>
+                </div>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

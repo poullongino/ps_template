@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale', 'stock'],
+    'depends': ['sale_management', 'stock'],
 
     # always loaded
     'data': [
@@ -28,7 +28,9 @@
         'views/sale_order.xml',
         'views/delivery.xml',
         'views/invoice.xml',
-        'report/invoice.xml'
+        'views/contact.xml',
+        'report/invoice.xml',
+        'report/quotation.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

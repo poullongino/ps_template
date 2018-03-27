@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <template id="external_layout_header_inherited" inherit_id = "web.external_layout">
+           <xpath expr = "//div[hasclass('footer')]" position = "replace">
+               <div class = "footer" t-if = "o.esd">
+                   <p t-field = "o.esd"/>
+               </div>
+           </xpath>
+       </template>
+
+
+
+    </data>
+</odoo>

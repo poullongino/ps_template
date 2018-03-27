@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <!-- Inherit Contact Form View to add VRN Number -->
+       <record id="contact_inherited_form_view" model="ir.ui.view">
+           <field name="name">Delivery Inherited Form View</field>
+           <field name="model">res.partner</field>
+           <field name="inherit_id" ref="base.view_partner_form"/>
+           <field name="arch" type="xml">
+
+               <xpath expr="/form/sheet/group/group/field[@name='vat']" position="after">
+                   <field name="vrn"/>
+               </xpath>
+
+
+
+           </field>
+       </record>
+
+    </data>
+</odoo>
