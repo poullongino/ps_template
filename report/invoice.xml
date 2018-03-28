@@ -4,7 +4,7 @@
 
         <template id="invoice_inherited_report" inherit_id = "account.report_invoice_document">
             <xpath expr="///div[hasclass('row')]" position="after">
-                <h5 class="display-4">
+                <h5>
                     <t t-esc="'Order Name'"/>:
                     <span t-field = "o.order_name"/>
                 </h5>

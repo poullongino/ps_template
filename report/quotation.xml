@@ -10,7 +10,7 @@
                 </div>
             </xpath>
             <xpath expr = "//div[hasclass('row')]" position = 'after'>
-                <h5 class="display-4">
+                <h5>
                     <t t-esc="'Order Name'"/>:
                     <span t-field = "doc.order_name"/>
                 </h5>

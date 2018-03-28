@@ -2,10 +2,13 @@
 <odoo>
     <data>
 
-       <template id="external_layout_header_inherited" inherit_id = "web.external_layout">
-           <xpath expr = "//div[hasclass('footer')]" position = "replace">
-               <div class = "footer" t-if = "o.esd">
-                   <p t-field = "o.esd"/>
+       <template id="external_layout_header_inherited" inherit_id = "web.external_layout_boxed">
+           <xpath expr = "//ul[hasclass('list-inline')]" position = "inside">
+               <li t-if="company.vrn_num"><t t-esc="'VRN'"/>: <span t-field = "company.vrn_num"/></li>
+           </xpath>
+           <xpath expr="//ul[hasclass('list-inline')]" position="after">
+               <div name = "tra" class = "text-center">
+                   <t t-esc="'ESD'"/>: <span t-field="o.esd"/>
                </div>
            </xpath>
        </template>

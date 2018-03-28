@@ -6,6 +6,7 @@ class Delivery(models.Model):
     _inherit = 'stock.picking'
 
     po_num = fields.Char('PO N°', required = True, store = True)
+    order_name = fields.Char('Order Name')
 
 
 

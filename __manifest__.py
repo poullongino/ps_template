@@ -29,8 +29,10 @@
         'views/delivery.xml',
         'views/invoice.xml',
         'views/contact.xml',
+        'views/res_company.xml',
         'report/invoice.xml',
         'report/quotation.xml',
+        'report/footer.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
