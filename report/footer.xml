@@ -7,7 +7,7 @@
                <li t-if="company.vrn_num"><t t-esc="'VRN'"/>: <span t-field = "company.vrn_num"/></li>
            </xpath>
            <xpath expr="//ul[hasclass('list-inline')]" position="after">
-               <div name = "tra" class = "text-center">
+                <div name = "tra" class = "text-center" t-if="o.esd">
                    <t t-esc="'ESD'"/>: <span t-field="o.esd"/>
                </div>
            </xpath>

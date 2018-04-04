@@ -24,9 +24,9 @@
 
     # always loaded
     'data': [
-        'views/quotation.xml',
         'views/sale_order.xml',
-        'views/delivery.xml',
+        'views/quotation.xml',
+        # 'views/delivery.xml',
         'views/invoice.xml',
         'views/contact.xml',
         'views/res_company.xml',

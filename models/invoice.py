@@ -5,8 +5,30 @@ class Invoice(models.Model):
 
     _inherit = 'account.invoice'
 
-    order_name = fields.Char('Order Name')
-    po_number_id = fields.Many2one('sale.order', default = lambda self: self.env['sale.order'].search([['po_num', '=', True]]))
-    po_number = fields.Char(related = 'po_number_id.po_num', store = True)
-    esd = fields.Text()
+    po_number = fields.Char('PO N°', compute='_get_po')
+    i_order_name = fields.Char('Order Name', compute='_get_name')
+    esd = fields.Char('ESD')
 
+    api.depends('invoice_line_ids')
+    def _get_po(self):
+        for rec in self:
+            invoice_lines = rec.invoice_line_ids
+            sale_orders = []
+            for inv_line in invoice_lines:
+                for so in inv_line.sale_line_ids:
+                    if so.order_id.po_num:
+                        sale_orders.append(so.order_id.po_num)
+
+            rec['po_number'] = ','.join(list(set(sale_orders)))
+
+    api.depends('invoice_line_ids')
+    def _get_name(self):
+        for rec in self:
+            invoice_lines = rec.invoice_line_ids
+            sale_orders = []
+            for inv_line in invoice_lines:
+                for so in inv_line.sale_line_ids:
+                    if so.order_id.po_num:
+                        sale_orders.append(so.order_id.order_name)
+
+            rec['i_order_name'] = ','.join(list(set(sale_orders)))

@@ -5,4 +5,4 @@ class Contact(models.Model):
 
     _inherit = 'res.partner'
 
-    vrn = fields.Char('VRN', placeholder = "e.g. 11-001122")
+    vrn = fields.Char('VRN', required = True)

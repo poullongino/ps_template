@@ -6,7 +6,7 @@
             <xpath expr="///div[hasclass('row')]" position="after">
                 <h5>
                     <t t-esc="'Order Name'"/>:
-                    <span t-field = "o.order_name"/>
+                    <span t-field = "o.i_order_name"/>
                 </h5>
             </xpath>
             <xpath expr = "//div[hasclass('row','mt32','mb32')]" position = 'inside'>

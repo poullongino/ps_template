@@ -18,7 +18,7 @@
             <xpath expr="//div[@name = 'payment_term']" position="after">
                 <div t-if = "doc.state not in ['draft', 'sent']" class = "col-xs-3">
                     <strong>PO Number:</strong>
-                    <p t-field = "doc.po_num"/>
+                    <p t-field = "doc.po_number"/>
                 </div>
             </xpath>
         </template>

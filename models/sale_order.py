@@ -5,4 +5,6 @@ class Orders(models.Model):
 
     _inherit = 'sale.order'
 
-    po_num = fields.Char('PO N°', required = True, store = True)
+    po_num = fields.Char('PO N°')
+    order_name = fields.Char('Order Name', required = True)
+    esd = fields.Char('ESD')

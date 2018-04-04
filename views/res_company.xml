@@ -10,7 +10,7 @@
            <field name="arch" type="xml">
 
                <xpath expr="/form/sheet/notebook/page/group/group/field[@name='vat']" position="after">
-                   <field name="vrn_num"/>
+                   <field name="vrn_num" placeholder = "e.g. 44-001122"/>
                </xpath>
 
            </field>
